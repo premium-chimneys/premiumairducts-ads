@@ -29,6 +29,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google Tag Manager */}
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VN1ZE8BNW" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-4VN1ZE8BNW');`,
+          }}
+        />
+        {/* End Google tag */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
@@ -43,19 +54,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           src="https://elfsightcdn.com/platform.js"
           strategy="afterInteractive"
         />
-
-<Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-8H95KCD7EY"
-          strategy="afterInteractive"
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-8H95KCD7EY');`}
-        </Script>
-
-        <Script id="clarity-init" strategy="afterInteractive">
+<Script id="clarity-init" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){
 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -77,6 +76,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         </Script>
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KDH5PM9S"
@@ -85,6 +85,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        {/* End Google Tag Manager (noscript) */}
 
         <TrackingCapture />
         {children}
