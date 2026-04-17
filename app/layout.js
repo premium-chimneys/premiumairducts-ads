@@ -65,7 +65,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         </Script>
         <Script
           id="wc-loader"
-          src="https://s.ksrndkehqnwntyxlhgto.com/137765.js"
+          src="https://s.ksrndkehqnwntyxlhgto.com/140244.js"
           strategy="afterInteractive"
         />
 
