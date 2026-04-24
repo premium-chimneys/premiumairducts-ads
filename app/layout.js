@@ -5,7 +5,7 @@ import './globals.css'
 export const metadata = {
   title: 'Premium Air Ducts',
   description: 'Professional air duct services',
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
   icons: {
     apple: '/webclip.png',
   },
