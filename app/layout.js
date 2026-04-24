@@ -3,8 +3,8 @@ import TrackingCapture from '@/components/TrackingCapture'
 import './globals.css'
 
 export const metadata = {
-  title: 'Premium Chimneys',
-  description: 'Professional chimney services',
+  title: 'Premium Air Ducts',
+  description: 'Professional air duct services',
   robots: { index: false, follow: false },
   icons: {
     apple: '/webclip.png',
@@ -70,18 +70,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "sa99g7wtlu");`}
         </Script>
 
-        {process.env.NODE_ENV === 'production' && (
-          <>
-            <style
-              dangerouslySetInnerHTML={{
-                __html: `.hero-cta-secondary .wc-phone-text,.nav-phone .wc-phone-text{opacity:0;transition:opacity .2s ease}.hero-cta-secondary.wc-ready .wc-phone-text,.nav-phone.wc-ready .wc-phone-text{opacity:1}`,
-              }}
-            />
-            <Script id="wc-phone-reveal" strategy="afterInteractive">
-              {`(function(){var SEL=".hero-cta-secondary,.nav-phone",FALLBACK=1500;function watch(el){if(el.dataset.wcWatched)return;el.dataset.wcWatched="1";var orig=el.getAttribute("href")||"";var done=false;function reveal(){if(done)return;done=true;el.classList.add("wc-ready");obs.disconnect()}var obs=new MutationObserver(function(){if((el.getAttribute("href")||"")!==orig)reveal()});obs.observe(el,{attributes:true,attributeFilter:["href"]});setTimeout(reveal,FALLBACK)}function init(){document.querySelectorAll(SEL).forEach(watch)}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}})();`}
-            </Script>
-          </>
-        )}
         <Script id="wc-init" strategy="afterInteractive">
           {`var $wc_load=function(a){return JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};`}
         </Script>
