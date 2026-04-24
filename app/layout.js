@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Google Tag Manager */}
-        <script
+        <Script
+          id="gtm-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -30,8 +32,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         {/* End Google Tag Manager */}
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VN1ZE8BNW" />
-        <script
+        <Script
+          id="gtag-loader"
+          src="https://www.googletagmanager.com/gtag/js?id=G-4VN1ZE8BNW"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -62,6 +70,18 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "sa99g7wtlu");`}
         </Script>
 
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `.hero-cta-secondary .wc-phone-text,.nav-phone .wc-phone-text{opacity:0;transition:opacity .2s ease}.hero-cta-secondary.wc-ready .wc-phone-text,.nav-phone.wc-ready .wc-phone-text{opacity:1}`,
+              }}
+            />
+            <Script id="wc-phone-reveal" strategy="afterInteractive">
+              {`(function(){var SEL=".hero-cta-secondary,.nav-phone",FALLBACK=1500;function watch(el){if(el.dataset.wcWatched)return;el.dataset.wcWatched="1";var orig=el.getAttribute("href")||"";var done=false;function reveal(){if(done)return;done=true;el.classList.add("wc-ready");obs.disconnect()}var obs=new MutationObserver(function(){if((el.getAttribute("href")||"")!==orig)reveal()});obs.observe(el,{attributes:true,attributeFilter:["href"]});setTimeout(reveal,FALLBACK)}function init(){document.querySelectorAll(SEL).forEach(watch)}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init)}else{init()}})();`}
+            </Script>
+          </>
+        )}
         <Script id="wc-init" strategy="afterInteractive">
           {`var $wc_load=function(a){return JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};`}
         </Script>
