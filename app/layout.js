@@ -18,6 +18,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Clicksy click fraud protection */}
+        <Script
+          id="clicksy"
+          src="https://ob.buzzfighter.com/i/bb27e5e712a305aacf8b18d791e3e5c3.js"
+          strategy="beforeInteractive"
+          className="ct_clicktrue"
+        />
         {/* Google Tag Manager */}
         <Script
           id="gtm-init"
@@ -84,6 +91,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         </Script>
       </head>
       <body>
+        {/* Clicksy click fraud protection (noscript) */}
+        <noscript>
+          <iframe
+            src="https://ob.buzzfighter.com/ns/bb27e5e712a305aacf8b18d791e3e5c3.html?ch="
+            width="0"
+            height="0"
+            style={{ display: 'none' }}
+          />
+        </noscript>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
