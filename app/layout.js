@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <script async src="https://cdn.serviceroot.io/capture.js" data-tenant="premium-chimneys"></script>
         {/* Clicksy click fraud protection */}
         <Script
           id="clicksy"
