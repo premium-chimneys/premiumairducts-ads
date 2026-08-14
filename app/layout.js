@@ -19,6 +19,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <script async src="https://cdn.serviceroot.io/capture.js" data-tenant="premium-chimneys"></script>
+        {/* First-party visitor counting. Served from the CRM app so how a visit
+            is counted lives in one file rather than in three repos, and posts to
+            the same table as the chimneys sites — which is what makes a visitor
+            who sees both brands one person and not two.
+
+            data-site is declared rather than read from location.hostname:
+            preview deployments and the apex/www pair would otherwise each become
+            their own site in the rollup and split the numbers. */}
+        <script defer src="https://agents.premiumchimneys.com/pv.js" data-site="premiumairducts.com"></script>
         {/* Clicksy click fraud protection */}
         <Script
           id="clicksy"
